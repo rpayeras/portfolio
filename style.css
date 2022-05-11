@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "lato";
+  src: url("../assets/fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "lato-semibold";
+  src: url("../assets/fonts/Lato-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "lato-bold";
+  src: url("../assets/fonts/Lato-Black.ttf") format("truetype");
+}
