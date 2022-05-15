@@ -2,17 +2,93 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./assets/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./assets/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./assets/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./assets/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./assets/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./assets/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./assets/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./assets/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roberto Payeras | Fullstack Web Developer</title>
     <script type="module" src="/main.js"></script>
-    <link href="/dist/output.css" rel="stylesheet" />
   </head>
   <body class="bg-slate-50 max-w-6xl m-auto font-lato text-oxford">
     <header
       class="p-4 transition-all w-full rounded-md flex justify-between items-center"
     >
-      <div class="">Roberto Payeras</div>
+      <div class="font-bold">
+        <span class="text-lime-500">{</span>Roberto Payeras<span
+          class="text-lime-500"
+          >}</span
+        >
+      </div>
       <div
         id="menu__wrapper"
         class="hidden md:block w-full md:w-auto h-full absolute md:relative left-0 top-0 backdrop-blur-sm md:backdrop-blur-none z-10 transition-all"
@@ -42,7 +118,8 @@
           <nav class="flex gap-4 p-2 align-middle">
             <a
               class="cursor hover:opacity-60 transition-opacity"
-              href="https://www.github.com"
+              href="https://github.com/rpayeras"
+              target="_blank"
             >
               <img
                 class="w-6"
@@ -52,7 +129,8 @@
             </a>
             <a
               class="cursor hover:opacity-60 transition-opacity"
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/rpayeras/"
+              target="_blank"
             >
               <img
                 class="w-6"
@@ -62,7 +140,8 @@
             </a>
             <a
               class="cursor hover:opacity-60 transition-opacity"
-              href="https://www.twitter.com"
+              href="https://twitter.com/Rpayeras"
+              target="_blank"
             >
               <img class="w-6" src="./assets/icons/twitter.svg" alt="Twitter" />
             </a>
@@ -113,28 +192,8 @@
               alt="Image of Roberto Payeras"
             />
           </div>
-
-          <div class="flex justify-center gap-4">
-            <a
-              class="cursor hover:opacity-60 transition-opacity"
-              href="https://www.github.com"
-            >
-              <img
-                class="w-8"
-                src="./assets/icons/github.svg"
-                alt="Github Page"
-              />
-            </a>
-            <a
-              class="cursor hover:opacity-60 transition-opacity"
-              href="https://www.linkedin.com"
-            >
-              <img
-                class="w-8"
-                src="./assets/icons/linkedin.svg"
-                alt="Linkedin Page"
-              />
-            </a>
+          <div class="text-lime-500 w-full text-center text-3xl p-4">
+            &lt;/>
           </div>
         </div>
         <div class="absolute -z-10 w-full h-full top-0 blur-3xl">
@@ -147,19 +206,22 @@
         </div>
       </section>
 
+      <section>
+        <div></div>
+      </section>
+
       <section class="mb-12">
-        <h2 class="text-3xl font-latosemibold mb-8 underline-wave">
-          About me!
-        </h2>
+        <h2 class="text-3xl font-latosemibold mb-4 underline-wave">About me</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis iusto
-          maiores cum illo, natus perspiciatis quidem doloremque velit, quisquam
-          quas quis veritatis at a, reiciendis deserunt nisi vitae fugit unde!
+          I'm Roberto, I develop backend and frontend web applications to
+          transform society. I am passionate about projects that not only make
+          me grow but are an important turning point in the sector. Cinephile,
+          sporadic sportsman, attentive companion and crazy searcher.
         </p>
       </section>
 
       <section class="mb-12">
-        <h2 class="text-3xl font-latosemibold mb-8 underline-wave">
+        <h2 class="text-3xl font-latosemibold mb-4 underline-wave">
           Technologies
         </h2>
         <div>
@@ -182,7 +244,7 @@
           </div>
           <div class="mb-8">
             <h3 class="text-xl text-center font-semibold mb-8">Backend</h3>
-            <div class="w-full flex gap-6 md:gap-8 justify-center">
+            <div class="w-full flex gap-4 md:gap-8 justify-center">
               <img
                 class="w-20"
                 src="./assets/icons/nodejs.svg"
@@ -214,7 +276,7 @@
         <h2 class="text-3xl font-latosemibold mb-8 underline-wave">
           Experience
         </h2>
-        <div class="grid grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-8">
           <div>
             <h3 class="text-lg font-bold">Fullstack Web Developer PHP</h3>
             <h4>Refineria Web - Palma de Mallorca</h4>
@@ -222,17 +284,22 @@
             <ul class="list-disc pl-4">
               <li>
                 I developed multiple websites using Laravel as main framework,
-                on some of them with little Vue components.
+                all with their own CMS developed myself or with a complement
+                like October CMS.
               </li>
               <li>
-                I gained understanding of modern versioning controls, docker
-                modern designs
+                I gained understanding of versioning control, modern responsive
+                designs with BEM and building apps with webpack.
               </li>
+              <li>I learned about SEO good practices.</li>
               <li>
                 I learned how to manage multiple clients with an assertive
                 attention.
               </li>
-              <li>test</li>
+              <li>
+                I maked complex SQL queries to extract useful business
+                information to create pdf reports.
+              </li>
             </ul>
           </div>
           <div>
@@ -246,15 +313,18 @@
                 services with PHP.
               </li>
               <li>
-                I created an app shared between hotels for give to clients
-                useful information about establishment and environment about him
-                with Angular JS.
+                I developed an app with angular js, was shared between hotels to
+                give to clients useful information about establishment and
+                environment about them.
               </li>
               <li>
                 I maked an Ionic app for Android and Ios for all workers to
                 centralize incidences on each establishment.
               </li>
-              <li>I created an intranet maked with React JS.</li>
+              <li>
+                I created an intranet maked with React JS for all employees for
+                all hotels.
+              </li>
             </ul>
           </div>
           <div>
@@ -263,8 +333,8 @@
             <p class="mb-4">March 2015 to June 2015 - 5 months</p>
             <ul class="list-disc pl-4">
               <li>
-                Intern period that i discovered some standards like MVC with
-                Microfrontends patterns in Java
+                Intern period where i discovered some standards like MVC with
+                Microfrontends patterns in Java.
               </li>
               <li>
                 I maked responsive designs with business standards of CSS.
@@ -277,7 +347,7 @@
       <hr class="bg-oxford w-60 m-auto border-1 mb-8" />
 
       <section class="mb-12">
-        <h2 class="text-3xl font-bold mb-2 underline-wave">Projects</h2>
+        <h2 class="text-3xl font-bold mb-4 underline-wave">Projects</h2>
         <h3 class="mb-8">Some of projects which i have been worked</h3>
 
         <div class="grid grid-cols-2 gap-4 md:gap-8 mb-16">
@@ -491,9 +561,9 @@
             </div>
           </a>
         </div>
-        <hr class="bg-oxford w-60 m-auto border-1 mb-8" />
-        <h2 class="text-3xl font-bold mb-2 underline-wave">Last Projects</h2>
-        <h3 class="mb-8">Last learnings and improvements</h3>
+        <hr class="w-60 m-auto border-1 mb-8" />
+        <h2 class="text-3xl font-bold mb-4 underline-wave">Last Projects</h2>
+        <h3 class="mb-8">Last learnings and improvements.</h3>
         <div class="grid grid-cols-2 gap-8">
           <a
             href="https://next-jira.rpayeras.xyz/"
@@ -659,17 +729,56 @@
         </div>
       </section>
       <section class="mb-12">
-        <h2 class="text-4xl font-latosemibold mb-8 underline-wave">Talk it?</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis iusto
-          maiores cum illo, natus perspiciatis quidem doloremque velit, quisquam
-          quas quis veritatis at a, reiciendis deserunt nisi vitae fugit unde!
+        <h2 class="text-4xl font-latosemibold mb-4 underline-wave">Contact</h2>
+        <p class="mb-12">
+          If you want to talk to me you can do so in any of the following ways.
         </p>
+        <div class="flex justify-center gap-4">
+          <a
+            class="cursor hover:opacity-60 transition-opacity"
+            href="https://github.com/rpayeras"
+            target="_blank"
+          >
+            <img
+              class="w-8"
+              src="./assets/icons/github.svg"
+              alt="Github Page"
+            />
+          </a>
+          <a
+            class="cursor hover:opacity-60 transition-opacity"
+            href="https://www.linkedin.com/in/rpayeras/"
+            target="_blank"
+          >
+            <img
+              class="w-8"
+              src="./assets/icons/linkedin.svg"
+              alt="Linkedin Page"
+            />
+          </a>
+          <a
+            class="cursor hover:opacity-60 transition-opacity"
+            href="https://twitter.com/Rpayeras"
+            target="_blank"
+          >
+            <img
+              class="w-8"
+              src="./assets/icons/twitter.svg"
+              alt="Twitter Page"
+            />
+          </a>
+        </div>
       </section>
     </main>
     <hr class="w-full h-1" />
     <footer class="p-2">
-      <span>2022</span>
+      Made with &#10084;&#65039; by
+      <span class="font-bold"
+        ><span class="text-lime-500">{</span>Roberto Payeras<span
+          class="text-lime-500"
+          >}</span
+        ></span
+      >
     </footer>
   </body>
 </html>
