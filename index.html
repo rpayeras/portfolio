@@ -4,61 +4,72 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Roberto Payeras | Fullstack Web Developer</title>
     <script type="module" src="/main.js"></script>
     <link href="/dist/output.css" rel="stylesheet" />
   </head>
   <body class="bg-slate-50 max-w-6xl m-auto font-lato text-oxford">
     <header
-      class="p-4 transition-all w-full rounded-md flex justify-between align-middle"
+      class="p-4 transition-all w-full rounded-md flex justify-between items-center"
     >
-      <div class="">Logo</div>
+      <div class="">Roberto Payeras</div>
       <div
         id="menu__wrapper"
-        class="hidden w-full h-full absolute left-0 top-0 backdrop-blur-sm z-10"
+        class="hidden md:block w-full md:w-auto h-full absolute md:relative left-0 top-0 backdrop-blur-sm md:backdrop-blur-none z-10 transition-all"
       >
         <div
-          class="w-10/12 p-4 ml-auto mt-2 mr-2 bg-white rounded-md shadow-sm"
+          class="w-10/12 md:w-full p-4 md:p-0 ml-auto mt-2 mr-2 md:flex md:flex-row md:justify-end md:align-middle md:gap-8 bg-white md:bg-transparent rounded-md shadow-sm md:shadow-none"
         >
-          <nav class="flex flex-col gap-4 mb-16 font-semibold">
+          <nav
+            class="flex flex-col md:flex-row gap-4 mb-16 md:mb-0 font-semibold md:items-center"
+          >
             <a
-              class="hover:underline hover:underline-offset-2 decoration-lime-500 transition-all"
+              class="decoration-wavy hover:text-lime-500 hover:underline hover:underline-offset-2 decoration-lime-500 transition-all"
               href="#"
               >Home</a
             >
             <a
-              class="hover:underline hover:underline-offset-2 decoration-lime-500 transition-all"
+              class="decoration-wavy hover:text-lime-500 hover:underline hover:underline-offset-2 decoration-lime-500 transition-all"
               href="#"
               >About</a
             >
             <a
-              class="hover:underline hover:underline-offset-2 decoration-lime-500 transition-all"
+              class="decoration-wavy hover:text-lime-500 hover:underline hover:underline-offset-2 decoration-lime-500 transition-all"
               href="#"
               >Contact</a
             >
           </nav>
-          <nav class="flex gap-4 p-2">
-            <a href="https://www.github.com">
+          <nav class="flex gap-4 p-2 align-middle">
+            <a
+              class="cursor hover:opacity-60 transition-opacity"
+              href="https://www.github.com"
+            >
               <img
                 class="w-6"
                 src="./assets/icons/github.svg"
                 alt="Github Page"
               />
             </a>
-            <a href="https://www.linkedin.com">
+            <a
+              class="cursor hover:opacity-60 transition-opacity"
+              href="https://www.linkedin.com"
+            >
               <img
                 class="w-6"
                 src="./assets/icons/linkedin.svg"
                 alt="Linkedin"
               />
             </a>
-            <a href="https://www.twitter.com">
+            <a
+              class="cursor hover:opacity-60 transition-opacity"
+              href="https://www.twitter.com"
+            >
               <img class="w-6" src="./assets/icons/twitter.svg" alt="Twitter" />
             </a>
           </nav>
           <div
             id="menu__btn--close"
-            class="absolute top-4 right-4 bg-white hover:bg-stone-200 hover:text-white px-3 py-1 rounded-full shadow-md cursor-pointer"
+            class="absolute md:hidden top-4 right-8 bg-white hover:bg-lime-500 hover:text-white px-3 py-1 rounded-full shadow-md cursor-pointer transition-all"
           >
             X
           </div>
@@ -66,7 +77,7 @@
       </div>
       <div
         id="menu__btn--open"
-        class="bg-white hover:bg-black hover:text-white px-2 py-2 rounded-full cursor-pointer transition-all duration-600"
+        class="md:hidden bg-white hover:bg-lime-500 hover:text-white px-2 py-2 rounded-full cursor-pointer transition-all duration-600"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -87,31 +98,41 @@
 
     <main class="p-4">
       <section class="mb-12 relative">
-        <div class="w-full mb-8">
-          <img
-            class="rounded-xl m-auto"
-            src="./assets/img/profile.jpg"
-            alt="Image of Roberto Payeras"
-          />
-        </div>
         <div class="">
-          <h1 class="text-4xl font-latosemibold mb-4">
-            I'm <span class="text-lime-500">Roberto</span><br />
-            Javascript Fullstack Developer.
-          </h1>
-          <div class="flex justify-center gap-2 mb-2">
-            <a class="" href="https://www.github.com">
+          <div
+            class="flex flex-col-reverse gap-8 md:gap-0 md:flex-row items-center mb-8"
+          >
+            <h1 class="text-6xl font-latosemibold">
+              I'm
+              <span class="text-lime-500">Roberto</span>.<br />
+              Javascript Fullstack Developer.
+            </h1>
+            <img
+              class="rounded-xl m-auto shadow-md"
+              src="./assets/img/profile.jpg"
+              alt="Image of Roberto Payeras"
+            />
+          </div>
+
+          <div class="flex justify-center gap-4">
+            <a
+              class="cursor hover:opacity-60 transition-opacity"
+              href="https://www.github.com"
+            >
               <img
                 class="w-8"
                 src="./assets/icons/github.svg"
                 alt="Github Page"
               />
             </a>
-            <a class="" href="https://www.linkedin.com">
+            <a
+              class="cursor hover:opacity-60 transition-opacity"
+              href="https://www.linkedin.com"
+            >
               <img
                 class="w-8"
                 src="./assets/icons/linkedin.svg"
-                alt="Github Page"
+                alt="Linkedin Page"
               />
             </a>
           </div>
@@ -121,17 +142,30 @@
             class="w-60 h-60 rounded-full bg-lime-200 animate-baila-linear absolute opacity-60"
           ></div>
           <div
-            class="w-60 h-60 rounded-full bg-cerise animate-baila-linear-reverse absolute right-0 top-80 opacity-40"
+            class="w-60 h-60 rounded-full bg-indigo-500 animate-baila-linear-reverse absolute right-0 top-80 opacity-40"
           ></div>
         </div>
       </section>
 
       <section class="mb-12">
-        <h2 class="text-xl font-latosemibold mb-4">Technologies</h2>
+        <h2 class="text-3xl font-latosemibold mb-8 underline-wave">
+          About me!
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis iusto
+          maiores cum illo, natus perspiciatis quidem doloremque velit, quisquam
+          quas quis veritatis at a, reiciendis deserunt nisi vitae fugit unde!
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-latosemibold mb-8 underline-wave">
+          Technologies
+        </h2>
         <div>
-          <div>
-            <h3 class="text-center font-semibold mb-4">Frontend</h3>
-            <div class="w-full flex gap-4 mb-6 justify-center">
+          <div class="mb-16">
+            <h3 class="text-xl text-center font-semibold mb-8">Frontend</h3>
+            <div class="w-full flex gap-8 justify-center">
               <img class="w-12" src="./assets/icons/react.svg" alt="React JS" />
               <img class="w-12" src="./assets/icons/nextjs.svg" alt="Next JS" />
               <img
@@ -146,65 +180,495 @@
               />
             </div>
           </div>
-          <div>
-            <h3 class="text-center font-semibold mb-4">Backend</h3>
-            <div class="w-full flex gap-4 mb-6 justify-center">
+          <div class="mb-8">
+            <h3 class="text-xl text-center font-semibold mb-8">Backend</h3>
+            <div class="w-full flex gap-6 md:gap-8 justify-center">
               <img
-                class="w-14"
+                class="w-20"
                 src="./assets/icons/nodejs.svg"
-                alt="React JS"
+                alt="Node JS icon"
               />
-              <img class="w-14" src="./assets/icons/mysql.svg" alt="React JS" />
               <img
-                class="w-14"
+                class="w-20"
+                src="./assets/icons/laravel.svg"
+                alt="Node JS icon"
+              />
+              <img
+                class="w-20"
+                src="./assets/icons/mysql.svg"
+                alt="Mysql icon"
+              />
+              <img
+                class="w-20"
                 src="./assets/icons/mongodb.svg"
-                alt="React JS"
+                alt="Mongo DB"
               />
             </div>
           </div>
         </div>
       </section>
 
+      <hr class="bg-oxford w-60 m-auto border-1 mb-8" />
+
       <section class="mb-12">
-        <h2 class="text-2xl font-bold">Projects</h2>
-        <h3 class="mb-2">Well here we go again...</h3>
-        <div class="grid grid-cols-2 gap-2">
-          <div class="relative">
-            <img
-              class="w-full"
-              src="./assets/img/no-image.svg"
-              alt="Project1"
-            />
-            <div
-              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-slate-400 bg-opacity-40 rounded-sm"
-            >
-              <h4 class="text-xl font-semibold mb-2">Project 1</h4>
-              <div class="flex gap-3">
-                <img class="w-8" src="./assets/icons/react.svg" />
-                <img class="w-8" src="./assets/icons/nodejs.svg" />
-              </div>
-            </div>
+        <h2 class="text-3xl font-latosemibold mb-8 underline-wave">
+          Experience
+        </h2>
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-lg font-bold">Fullstack Web Developer PHP</h3>
+            <h4>Refineria Web - Palma de Mallorca</h4>
+            <p class="mb-4">December 2019 to Enero 2022 - 2 Years 1 month</p>
+            <ul class="list-disc pl-4">
+              <li>
+                I developed multiple websites using Laravel as main framework,
+                on some of them with little Vue components.
+              </li>
+              <li>
+                I gained understanding of modern versioning controls, docker
+                modern designs
+              </li>
+              <li>
+                I learned how to manage multiple clients with an assertive
+                attention.
+              </li>
+              <li>test</li>
+            </ul>
           </div>
-          <div class="relative">
-            <img
-              class="w-full"
-              src="./assets/img/no-image.svg"
-              alt="Project1"
-            />
-            <div
-              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-slate-400 bg-opacity-40 rounded-sm"
-            >
-              <h4 class="text-xl font-semibold mb-2">Project 1</h4>
-              <div class="flex gap-3">
-                <img class="w-8" src="./assets/icons/react.svg" />
-                <img class="w-8" src="./assets/icons/nodejs.svg" />
-              </div>
-            </div>
+          <div>
+            <h3 class="text-lg font-bold">PHP Developer</h3>
+            <h4>Grupotel Hotels & Resorts - Palma de Mallorca</h4>
+            <p class="mb-4">July 2015 to December 2019 - 4 years 6 months</p>
+            <ul class="list-disc pl-4">
+              <li>
+                I developed and maintained his main website, CMS, reservation
+                system, channel manager with integrations in XML and REST
+                services with PHP.
+              </li>
+              <li>
+                I created an app shared between hotels for give to clients
+                useful information about establishment and environment about him
+                with Angular JS.
+              </li>
+              <li>
+                I maked an Ionic app for Android and Ios for all workers to
+                centralize incidences on each establishment.
+              </li>
+              <li>I created an intranet maked with React JS.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Frontend Developer</h3>
+            <h4>At4.net Internet and Comunications - Palma de Mallorca</h4>
+            <p class="mb-4">March 2015 to June 2015 - 5 months</p>
+            <ul class="list-disc pl-4">
+              <li>
+                Intern period that i discovered some standards like MVC with
+                Microfrontends patterns in Java
+              </li>
+              <li>
+                I maked responsive designs with business standards of CSS.
+              </li>
+            </ul>
           </div>
         </div>
       </section>
+
+      <hr class="bg-oxford w-60 m-auto border-1 mb-8" />
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 underline-wave">Projects</h2>
+        <h3 class="mb-8">Some of projects which i have been worked</h3>
+
+        <div class="grid grid-cols-2 gap-4 md:gap-8 mb-16">
+          <a
+            href="https://www.visualight-it.com"
+            rel="nofollow"
+            class="relative group shadow-md"
+            target="_blank"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/visualight.jpg"
+                      loading="lazy"
+                      alt="Visualight image 1"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/visualight2.jpg"
+                      loading="lazy"
+                      alt="Visualight image 2"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">Visualight</h4>
+              <div class="flex gap-3">
+                <img
+                  class="w-6"
+                  src="./assets/icons/laravel.svg"
+                  alt="react icon"
+                />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.luxsystems.com"
+            target="_blank"
+            rel="nofollow"
+            class="relative group shadow-md"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/luxsystems.jpg"
+                      loading="lazy"
+                      alt="luxsystems image 1"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/luxsystems2.jpg"
+                      loading="lazy"
+                      alt="luxsystems image 2"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">Luxsystems</h4>
+              <div class="flex gap-3">
+                <img
+                  class="w-6"
+                  src="./assets/icons/laravel.svg"
+                  loading="lazy"
+                  alt="react icon"
+                />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://trackyourmed.com/"
+            target="_blank"
+            rel="nofollow"
+            class="relative group shadow-md"
+          >
+            <img
+              class="w-full"
+              src="./assets/img/projects/trackyourmed.jpg"
+              loading="lazy"
+              alt="Project1"
+            />
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">Trackyourmed</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/laravel.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://web.archive.org/web/20211009112338/http://safetourism.illesbalears.travel/"
+            rel="nofollow"
+            class="relative group shadow-md"
+            target="_blank"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/safetourism.jpg"
+                      loading="lazy"
+                      alt="Project1"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/safetourism2.jpg"
+                      loading="lazy"
+                      alt="Project1"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">
+                Safetourism Illes Balears
+              </h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/react.svg" />
+                <img class="w-6" src="./assets/icons/laravel.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.esprincep.com"
+            target="_blank"
+            rel="nofollow"
+            class="relative group shadow-md"
+          >
+            <img
+              class="w-full"
+              src="./assets/img/projects/esprincep.jpg"
+              alt="Project1"
+            />
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">Es Princep Hotel</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/laravel.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.stp-palma.com"
+            target="_blank"
+            rel="nofollow"
+            class="relative group shadow-md"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/stp.jpg"
+                      loading="lazy"
+                      alt="Project1"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/stp2.jpg"
+                      loading="lazy"
+                      alt="Project1"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">STP Palma</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/laravel.svg" />
+              </div>
+            </div>
+          </a>
+        </div>
+        <hr class="bg-oxford w-60 m-auto border-1 mb-8" />
+        <h2 class="text-3xl font-bold mb-2 underline-wave">Last Projects</h2>
+        <h3 class="mb-8">Last learnings and improvements</h3>
+        <div class="grid grid-cols-2 gap-8">
+          <a
+            href="https://next-jira.rpayeras.xyz/"
+            target="_blank"
+            class="relative group shadow-md"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/next-jira.jpg"
+                      loading="lazy"
+                      alt="Next jira project"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/next-jira-2.jpg"
+                      loading="lazy"
+                      alt="Next jira project 2"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">Next Jira</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/nextjs.svg" />
+                <img class="w-6" src="./assets/icons/nodejs.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://next-calendar.rpayeras.xyz/"
+            target="_blank"
+            class="relative group shadow-md"
+          >
+            <img
+              class="w-full"
+              src="./assets/img/projects/next-calendar.jpg"
+              loading="lazy"
+              alt="Project1"
+            />
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">Next Calendar</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/nextjs.svg" />
+                <img class="w-6" src="./assets/icons/nodejs.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://next-comics.rpayeras.xyz/"
+            target="_blank"
+            class="relative group shadow-md"
+          >
+            <img
+              class="w-full"
+              src="./assets/img/projects/next-comics.jpg"
+              loading="lazy"
+              alt="next comics"
+            />
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">Next Comics</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/nextjs.svg" />
+                <img class="w-6" src="./assets/icons/nodejs.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://next-pokemon.rpayeras.xyz/"
+            target="_blank"
+            class="relative group shadow-md"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/next-pokemon.jpg"
+                      loading="lazy"
+                      alt="Next pokemon project"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="./assets/img/projects/next-pokemon-2.jpg"
+                      loading="lazy"
+                      alt="Next pokemon project 2"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">Next Pokemon</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/nextjs.svg" />
+                <img class="w-6" src="./assets/icons/nodejs.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://react-heroes.rpayeras.xyz/"
+            target="_blank"
+            class="relative group shadow-md"
+          >
+            <img
+              class="w-full"
+              src="./assets/img/projects/react-heroes.jpg"
+              loading="lazy"
+              alt="React heroes image"
+            />
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">React heroes</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/react.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://react-gif.rpayeras.xyz/"
+            target="_blank"
+            class="relative group shadow-md"
+          >
+            <img
+              class="w-full"
+              src="./assets/img/projects/react-gif.jpg"
+              loading="lazy"
+              alt="Project1"
+            />
+            <div
+              class="w-full absolute bottom-0 items-end py-1 pl-2 bg-white bg-opacity-60 group-hover:bg-opacity-80 transition-all cursor rounded-sm"
+            >
+              <h4 class="text-md font-semibold mb-2">React Gif</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="./assets/icons/react.svg" />
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section class="mb-12">
+        <h2 class="text-4xl font-latosemibold mb-8 underline-wave">Talk it?</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis iusto
+          maiores cum illo, natus perspiciatis quidem doloremque velit, quisquam
+          quas quis veritatis at a, reiciendis deserunt nisi vitae fugit unde!
+        </p>
+      </section>
     </main>
-    <footer>
+    <hr class="w-full h-1" />
+    <footer class="p-2">
       <span>2022</span>
     </footer>
   </body>

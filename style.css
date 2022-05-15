@@ -13,3 +13,7 @@
   font-family: "lato-bold";
   src: url("../assets/fonts/Lato-Black.ttf") format("truetype");
 }
+
+.underline-wave {
+  @apply font-semibold decoration-wavy underline underline-offset-4 decoration-lime-500 transition-all;
+}

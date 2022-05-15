@@ -36,8 +36,8 @@ module.exports = {
         },
       },
       animation: {
-        "baila-linear": "baila 30s linear infinite",
-        "baila-linear-reverse": "bailareverse 30s linear infinite",
+        "baila-linear": "baila 20s linear infinite",
+        "baila-linear-reverse": "bailareverse 20s linear infinite",
       },
     },
     fontFamily: {
