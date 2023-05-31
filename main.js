@@ -1,6 +1,5 @@
 import "./style.css";
 
-import "@splidejs/splide/css/skyblue";
 import Splide from "@splidejs/splide";
 
 const initEvents = () => {
