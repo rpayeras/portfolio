@@ -1,7 +1,7 @@
 import "./style.css";
 
 import Splide from "@splidejs/splide";
-import "@splidejs/splide/css/skyblue";
+// import "@splidejs/splide/css/skyblue";
 
 const initEvents = () => {
   document.getElementById("menu__btn--open").addEventListener("click", () => {
