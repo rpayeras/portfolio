@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="data:image/png;base64,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"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAC4lBMVEX4+vz5+v32+fny+PDy9+72+ff3+vne8Mey3nKz3nLg8c74+v35+v7v9uu24HmIzh6j2FTk8tT4+vvf8Mqc1UWKzyK84obz+PLE5ZWN0Cea1ULX7brn89qp21+Izh/t9eX3+fnQ6qyU0jWP0S3L6KL2+fj3+vrw9+3e78jd78by+PHx9+6233iJzh+i2FLk8tXi8tHY7r3s9eX0+PPi8dC/5Ivt9ufg8Mye1kq44X70+fXI6J6b1UOz33TZ7r7w9+v1+fbj8tHD5ZKf10qKziGHzRzu9uj1+ffH55uNzyiV0jbW7LfJ6KCO0CqHzRuV0zi34Hza7sDx9+3m89jD5ZOh2FCFzBeP0Syw3m3Z7r/o9Nyt3Giq22Dr9OG944eY1D2GzRqGzRu44Hzc78Tz+PHq9N/L6KOo216MzyaEzBeO0Cmn2lzp9N/3+vvS67GW0zrE5pXW7Lm133eU0jaFzRm+44n1+fXr9eHO6qin2l2FzBin2lrO6qno89uJziCg103g8czv9urX7bux3m+U0zaf10vl8tX0+fSR0TGh11DH55zh8c+34Hvs9uXU7LWs3GWS0jKIzR2N0CjM6KTv9unn89mq22GDzBSq22LK6KCT0jTT7LPp9N7A5I2EzBWEzBaY1D7V7Lbu9unF5peX0zu64YHd8Mfs9uSt3Wio2l3G5pmk2VXj8tPx9++24HqV0zeHzR3A5Izb78OZ1D+MzyXA5I7K6KGNzybN6afr9eO033af10y/44qKzyOe1knb7sLL6KSo212n2lvO6ajt9ubR66+p22CP0Czq9ODl8tal2Va04HbT67OQ0S+LzyPH5pvq9eHN6aio2l6+44jw9+yR0TDQ6qvR666g10z0+PTr9eLM6aWw3W2u3Wqm2Vm/44vj8tL1+PXF5paZ1UGJziG94obX7by/5IzB5I+LzySX1Dzz+POIzh2r3GST0jOQ0S7J6J/s9eSw3m6g10/5+/7///+mdtPMAAAAAWJLR0T1RdIb2wAAAAlwSFlzAAASdAAAEnQB3mYfeAAAAAd0SU1FB+YFDwoWCIOedSoAAAKWSURBVEjHY2AYBaNgFJADGBnJ18vEzMJKrl42dg5OLm7y9PLw8vELCPKQp1lIWERUjJk8mxnFJSSlpMn0MbeMrBynPAkWMzIoCMGDS1FJWUUVyFBQIybCGBnVNTS1oHZxa+vo6ukDGaoGhkZqhIKNm8fYxFSEzwyqjtvcQs4SaBK3lbWNrZ09/uTC6ODo5OziausG1ezu4enlrQY0xN3H188/IDCIAZf3ubmZgkNCXcLCIyKtIGoYo6L5Y2JB1gkFx8UnJMYnJadg187IlJqWnpGZlZ2WkwsVys3L9y0QB7uVW72wqLjE1aLUsYwbQzs3U3lFpW+Vb3VNLRPMZ4y8AXX1DTAFDI1NzS0Juq1ObcbomtsDoztcMzq7glkRYcrTXc/f4wYPJJ7c3r7+CRMn6U2egubmqdNKpovOYC/jQbiJ22Fm1qzZCkiqeNjmzJ0wb/6Chaihzr1osZRrwpKly8QRPuJZviJxpQxS5HIrTF21uq6qo2gNuq/XNq1bn7ihdaNJOwPUXLVNm7dsFYep42ZUTd0Ws73Kd8aOnZgRxWAvvWtWSd3uPSaQAGEMitu7bz9cL+ucAwezwrIOHZ6DNaEyCh05euz4/L2dXSfUQMpPnuI/fQSmOejMtLOZ5+rPB6viSqQ8qhcuXlIOO375CiMDt2ra1QnX1KAyqtcXVNXdCBG8iSeBcjMy3bq9MuuOPA8Dt9td13sysAxitfj4vvsPHnLjz5zc3AonH90G2iy06fGTp/Dgcn/2PFmcgYh8ze2ewsTALf7i5atIWDplyBV/TYxWsO3A0NNf+ebtckYUMaKB2o537z9YkVnwffzkulqQLK3ASDM59vk2mSUuMKL2d78m02Kg7i88ZNo7CkbBKBh5AACx56/UVJ+5OAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0wNS0xNVQxMDoyMjowMSswMDowMIZYt6MAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjItMDUtMTVUMTA6MjI6MDErMDA6MDD3BQ8fAAAAIHRFWHRzb2Z0d2FyZQBodHRwczovL2ltYWdlbWFnaWNrLm9yZ7zPHZ0AAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6SGVpZ2h0ADE5MkBdcVUAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgAMTky06whCAAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNjUyNjEwMTIxcrqSoAAAAA90RVh0VGh1bWI6OlNpemUAMEJClKI+7AAAAFZ0RVh0VGh1bWI6OlVSSQBmaWxlOi8vL21udGxvZy9mYXZpY29ucy8yMDIyLTA1LTE1L2EwZjM1NjhmZjRhYmMzZDNlMDNiOTE2N2Y2NWFhY2Y1Lmljby5wbmfjog+kAAAAAElFTkSuQmCC"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="data:image/png;base64,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eI2F/AzzhRm23DS+rBBT2+g13iJlnyVln6XXOFoXQ8NydilopyiV9ugexjsHGTAnWcjPkM5/t/2v82D7P6wUb7BkX+NIx6cMW1PE1PYfDazgrbHu3KFYWceMdNFnjDfcNfRlhY3SHHef/Z1Huc/Jummq0iWqWCSNt0nZ04zY0yTNCTTF2v00X17Q96IUodGjH6YztpcBa5KF/CXS+YtknBvkK2s82Po3mmLSFTuArrbv0FM7qqyX75FxblLxXfrNg/Tq40QVq4EVFlRkmcXiVe5m/0bBWyWiGCSNCUbsM6TsafrNyXod9Wq9olc8rNYmoooofcYxevRRBq1TpPPnSecusF66h1ct4kuXH57my36eVecWWfcJmqLTZ4zXu4aNtSp8WcWrFgFJjzHKsHWaPfH3GDJPEYt0NHS8aYKgF1FFjH7zOD36YQbNkywUZtDVjnqI7xysZKucZs25Q6m6RWd0Lwn9KGaku+FJKUKlK7afsc4/0mccY9iaqh9KvxPTUv2g7ycOAk2xGLKn6DOPUfEdNMV+YTfzpcd66Q6bpW8QCHqNoySMIyhCa3BikoiIMWS9w6B1CuN5xLR0R/HFCQgEUcXeUTx+T6GyQaZ4k5y3gq520Gceoz2a2tXkFBHBiPywHPj135e9gbcaks3yfdZLd6nIEh2xFD2x0Xpybj2aLsjzHdad22TdJ0REjKRxnO7YQZr5Onk3NFmQJOs+YaX4NYXKBraWJGlMYGtJmvk6eTc08esOgcRny52nVN2iJ3aYvW0fkDQndpGc/68F1XY4W0tyuP13GJGuWltD629ZOQCi2f9xKGUVWe8pKa/4xqEZNP0DKiFUFCL1mGndyPmON/KFWbO/M3wVWvLrjlYiFBRAKCiAUFAAoaAAQkEBhIICCAUFEAoKIBQUQCgogFBQAKGgAEJBAYSCAggFBRAKCiAUFEAoKID/AcyKvTdOqyX/AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTA1LTE1VDEwOjIyOjAxKzAwOjAwhli3owAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wNS0xNVQxMDoyMjowMSswMDowMPcFDx8AAAAgdEVYdHNvZnR3YXJlAGh0dHBzOi8vaW1hZ2VtYWdpY2sub3JnvM8dnQAAABh0RVh0VGh1bWI6OkRvY3VtZW50OjpQYWdlcwAxp/+7LwAAABh0RVh0VGh1bWI6OkltYWdlOjpIZWlnaHQAMTkyQF1xVQAAABd0RVh0VGh1bWI6OkltYWdlOjpXaWR0aAAxOTLTrCEIAAAAGXRFWHRUaHVtYjo6TWltZXR5cGUAaW1hZ2UvcG5nP7JWTgAAABd0RVh0VGh1bWI6Ok1UaW1lADE2NTI2MTAxMjFyupKgAAAAD3RFWHRUaHVtYjo6U2l6ZQAwQkKUoj7sAAAAVnRFWHRUaHVtYjo6VVJJAGZpbGU6Ly8vbW50bG9nL2Zhdmljb25zLzIwMjItMDUtMTUvYTBmMzU2OGZmNGFiYzNkM2UwM2I5MTY3ZjY1YWFjZjUuaWNvLnBuZ+OiD6QAAAAASUVORK5CYII="
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH5gUPChYIg551KgAACmRJREFUeNrtm9tzFPl1xz+/vvf0zEgzGt0lBJJYJG5evCEB1l577S3K5cpTKpXnVOWPy1NcqUrF5dgLIU7ssLXACrNcFwRCQhpJI2mufe/pPGhEwGaXaa2QRFV/X/Sg6e7z+/Q553fO+c0I1w9jUnUt6aANeN+UAkuoFFhCpcASKgWWUCmwhEqBJVQKLKFSYAmVAkuoFFhCpcASKgWWUCmwhEqBJVQKLKGUgzagewlE5y/ExBzM3PO9AdaOQ6LYJSZCoKBIOgJ53+14L4C144A19y6Par+mGZQpGSeY7f07cuoI7LOnHXpgAolWuM58/Xd8vfnPRHGAKRc6/xP7HpqHPunHRNS8BZZaX+BGNbLqECPWRxhyD/vtXXDogQncqMaa+zWb3hMkoVDUpynpJ1Al80AS/6EGJhA0gxXK9m2csIopFxnOnCOrDh1IwodDDiyKfbb8Z1S8B8RE5LUxhs1zqFLmwMqKfQG2XUGJxFe1wjVW7dvU/CVUyaSkf0CvfhRJaPx5/trdMw4ZMIFEHEd4UZ2g3UzsFVV/gbI9h99ukVWHGbb+CkPu/QssUezjRFuEsYNAeqfg3klZIZBoE9AMyqy793HCTfqM4/QbJxFCpZvdLWjbbLqP2fTmkVAo6JMMmmdRJOM18DExTrTFUus6xDBgniKvjqJKVudzexu6ewpMIBET0QpX2XC/4Vnzv5ivX0GTs/yw758oGTOdxubtd6oHS5Sd29hhBUPOUzJmyKnDSMh/4ale1GC+foVl+wYj5kdM9VxmyPwBWXUQRTKJ470DtyfAtkG1saMNav4CT+tXmW98zqb3FDeqMmCcTGRwTMSm+w1rzh2iOKBHO8KI+cNOsn/z86PYp+Yv0vRXWLFvMZa9yHT+MgPmKTJKP4rQO9d+P3DfC9gOKC+qUQ+WmK9fZb55hQ33EU64iUCQUUr0GSfIqsMI5K7MdcMqFfchdX8JVTLoN2boN2aR3xDOAoEp91AyZlh37lLzl9jy52lWV1m2bzBuXWA6/wv6zZOYchFZqN8L3K6A7bQkXrtBM1hhofl7ntQ/Z925hx1WgBhT6aWoH2cy93OO5X5GQZ9EElJXhm5586w6d/DadfLqOCVzFlMpfmsrZMi9nC78AwXtKI/r/8GyfZNWsMaG+5CGv8yyfYtx6xLT+cuUjBMYSi8Syq7AJQK2Y3AQOzSDMk8b13jWuMa6e49msEI7jtDlPEV9mqn8ZxzJfkyvNklGKXa88e3GhW2Pdfc+Fe8BICgaUwyaZ5GF9q1XCyGTV0cx8pcZME+zYs/xpP5blu0b2GGFNedr6v4SK/ZNxrMXOJ7/JQV9Ck3OvjEn7hmwKPZphqs8b/6Bp42rlO0/0Qhe0I5DNClL0ZxiOn+ZMesiRX2KjFLqhGG7a6MawTJrzh1awSqG3MOAeZqiPo0QMt/lDTExmmTRp39ATh1h0DzDin2Tx/XfUnbmcMINlu2bbPlPWbG/YqzjcQV9EkUyOuXIHgGLibHDCkut6zypf86qM0fVf07U9rYLSuMEx3I/Y9y6+DLJ7uS3mHaXr0MQE7LpPabiPSRouxT1afr1WTQpC13srztlhCpZ9Juz5LXRbY9z5pivX6Fs38KJqiy2rrPpPWHFvsV49hLHsp9SNKaQhbYXwLb7uUe1f+Pe1q+ouA8JY7cDapZjuZ8yZl1g0DyNpQ51XDwJqP9frhc1WXfvUvUXUCSdkjFDyZx9q3e9EV0co0k5hswPKehTDBpnWLFv8axxjRVnjmawRjNYo+I+ZMt7wod9/8iQefatkfBWYALwowbrzgMq7gPC2H1ZTWtSln7jJGPWeQy5lxixC1A7S2xT7SR7J9zshNVZ8upo53m72dW2R9m6ZDFknkYWCuvuXYS7E35tGsEyZfs2rZ7Vru74VmAxYKkDTPdcpk3AUvM6jWCFqO1R9ee5V/0Xav5zjmQ/pt882QmfpBK044h19wEb7mPacZte/SglYwZFMnb1AnbuGxNS9RdZbP6RF60veWF/iRdWgRhNzjNonGEy/xlF/fjeAIMYQy5wLPcpPdoEQ+aHLLX+lxetG7TCdZ41rlG25zr54CJj1gVKxgk0KZtg245xwg3W3Xu0wlV02aLfmKWgT+7KuwSCNiE1f5Hl1g2WWl+w2PojNX+RKA7QJIsB8wzj1iWOZC8xlPkBhlzoamPqcpeMkYXeWcQxxqy/5lnj9yy1vmDF+Qo7rDDfuErZmeNF60vGsx8zap2nTz+OJlnfCU4giOKAdfc+a85d/KhJyZhh0DyLpfTTTbJ/DVQcUg0WKdtzLLau87z5P9T850SxjyplGDBOMWr9DePZi4xmzmMqxUQvI3HhqgiDAfM0BX2K8exF5htXWGxep+Lexw4rPKn/jhX7FiPWeY5mP2E4c46CPoUqWd+68LDtsubcoeo/QwiZkjlDn/4BklC6hCWI45Ba8II152ueN//AQuu/qXkLhLGPKgyKxilGrY+YyP6EcesChlJ4ZbLxjuqwVw1UJYuhzDn6jOOMW5d42vhPXrS+YMN7RDNc2664WzcZtc5zoudvGcte7NRlr49e2rRphmUq7gPcqIqpFOg3ZslrY11bE7Yd1pw7PKr9O08b16j5CwSxiyI0+vTjDGfOMZH9hCPZj8kopc6L2AH1Div91xUjkNCkPGPWBQbMU6y0LjHfuLpdIHpPaIZlHtd/gxtV0eQcE9kfIV4Z/m2Ho8eqc5uK+4ioHVA0JxkwTmHI+a7tsKMK96q/4n71X3GjKrJQKWhHGTTPcDT3KRPZH2GpA8hC3zWoPQDGy4dKQsGUC0zkfsxQ5kNWnK94XPsNy/YNqt4CdljBi2rExK8FQAy4UZ1l+ysawQtUyWDQPEtBn4Iuk30MBJFDK6wQxi55dYR+4yRT+c+YyH5CVh1CkcxX+tADnFa8anYMyEIjo/Qxkf0xA8Yplu2bfFP7NVEcoEoZXp+ECtpxwJY3T8V9iNdu0qsdoWTMklUGEi1MEgo5dZhx6wJHsz/laO4n9GjjqJL1EtRenQHs6QBxxyhF6OTUYSZzP2fAPIUb1TDlItIrDbhge6q66tym5i8gEJSMWfqMD5Alo2tgAsgoRU4W/h5ZKOTVMXQ597LZ3+vDkncyot4xUpVMerVjxHG4HY5CfuUzbeywQtnebowNuYfhzDl69YmETxNoco4B4ySSkBM3+0n1Tg9BdnKGEEpnZ9pZong5xtnwviGMfXLaKCVjBkMukLxQlZCECt+jNTsUwF5F9+dL9NtNyvYczaCMIjSGzLP0ahNIuz6g3Z9zygM4yN2u7Gv+Iqvun/CiOpbSz0jmI3LqyIEd0HarfQcmdrzLmaPqLSCQKZmz9Bkn0L6jGzgs2v+vOwmIYg8n3KJHG2fMusjxnl9Q0CYPOaqO+fv9m+9tD2ux7t7Dixrk1BF69QkUYXLYvQsOANgbTOB9ALWjQ/DtnfcHFhwKYO+XUmAJlQJLqBRYQqXAEioFllApsIRKgSVUCiyhUmAJlQJLqBRYQqXAEioFllApsIRKgSVUCiyhUmAJlQJLqBRYQqXAEur/APuRcPuz9DmBAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTA1LTE1VDEwOjIyOjAxKzAwOjAwhli3owAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wNS0xNVQxMDoyMjowMSswMDowMPcFDx8AAAAgdEVYdHNvZnR3YXJlAGh0dHBzOi8vaW1hZ2VtYWdpY2sub3JnvM8dnQAAABh0RVh0VGh1bWI6OkRvY3VtZW50OjpQYWdlcwAxp/+7LwAAABh0RVh0VGh1bWI6OkltYWdlOjpIZWlnaHQAMTkyQF1xVQAAABd0RVh0VGh1bWI6OkltYWdlOjpXaWR0aAAxOTLTrCEIAAAAGXRFWHRUaHVtYjo6TWltZXR5cGUAaW1hZ2UvcG5nP7JWTgAAABd0RVh0VGh1bWI6Ok1UaW1lADE2NTI2MTAxMjFyupKgAAAAD3RFWHRUaHVtYjo6U2l6ZQAwQkKUoj7sAAAAVnRFWHRUaHVtYjo6VVJJAGZpbGU6Ly8vbW50bG9nL2Zhdmljb25zLzIwMjItMDUtMTUvYTBmMzU2OGZmNGFiYzNkM2UwM2I5MTY3ZjY1YWFjZjUuaWNvLnBuZ+OiD6QAAAAASUVORK5CYII="
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/assets/apple-icon-114x114-3cc7c083.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/assets/apple-icon-120x120-a536ea5f.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/assets/apple-icon-144x144-70573bb6.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/assets/apple-icon-152x152-fc9cf657.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-icon-180x180-b1d54305.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/android-icon-192x192-63c8eaa1.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABcVBMVEX4+vz4+v33+vvy+PD0+fX5+v7k8tOv3Wzd78b4+vvA5I2g103r9eL5+v3s9eSi2FK94obu9ujY7bzt9ufS67GZ1D/e8Mj5+//y+PHY7r3p9N7x9+/S67Cl2Vag107m89j1+fWy3nGr3GPz+PLw9+yr3GWe1krJ55/t9ubW7bqr22OU0jas3GTZ7r71+ffi8dCb1UPM6KS033aV0zij2FPP6qrw9+vf8Muw3m6V0zmq22LV7LbE5pWe1kn2+fiX1Duo2l7W7bnC5ZGJziGY1D36+/+l2Vi54X73+vr5+/75+vzg8Myj2FSGzRuz33Px9+3Q6qy133ff8Mr2+ffW7bjl89a+44ia1ECf10zH55vu9unK6KCW0zm944e34Hqo2l3x9+71+fbJ556Z1ECa1ULC5JDq9ODE5ZSs3Gbl89eb1UTG5pnv9uqy33O64YLm89n0+PPI556c1kX3+fnv9+un2lu033St3Gfc78Tz+PH////uJsX0AAAAAWJLR0R6ONWFagAAAAlwSFlzAAASdAAAEnQB3mYfeAAAAAd0SU1FB+YFDwoWCIOedSoAAAERSURBVDjLY2AYpoCRgDwTMwteeVY2dg5WfAo4ubh5eLHK8IL18fLxC3AysGKawcgqKCQMdB6riKiYuISkFC+qKYzi0jKycvKsDIwKikrKrCqqauoarEhKWJU1tbR1dPWALH0DQ1YGJn0jYxNTM7g9TOYWllbWyiA+o42tFJBmteNQtHdwtIMqsHNydrG2cwU5UdDN3QMk5Onl7ePrpwwLM/8AN8vAoGBGBvEQF12gAYweoWHhEZF8SF6Iio6IiVXhDY6LTwDqSkxKTklNQ/EILy9fekama2hWNlCUNyc3L58BPSh4GXIKeAuLMkHiwYLF2EKbl7ektMwOqhp7POmXV+CNJ8ZKQSb8SYGRl2EU4AAAVsAk3sP+E38AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDUtMTVUMTA6MjI6MDErMDA6MDCGWLejAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA1LTE1VDEwOjIyOjAxKzAwOjAw9wUPHwAAACB0RVh0c29mdHdhcmUAaHR0cHM6Ly9pbWFnZW1hZ2ljay5vcme8zx2dAAAAGHRFWHRUaHVtYjo6RG9jdW1lbnQ6OlBhZ2VzADGn/7svAAAAGHRFWHRUaHVtYjo6SW1hZ2U6OkhlaWdodAAxOTJAXXFVAAAAF3RFWHRUaHVtYjo6SW1hZ2U6OldpZHRoADE5MtOsIQgAAAAZdEVYdFRodW1iOjpNaW1ldHlwZQBpbWFnZS9wbmc/slZOAAAAF3RFWHRUaHVtYjo6TVRpbWUAMTY1MjYxMDEyMXK6kqAAAAAPdEVYdFRodW1iOjpTaXplADBCQpSiPuwAAABWdEVYdFRodW1iOjpVUkkAZmlsZTovLy9tbnRsb2cvZmF2aWNvbnMvMjAyMi0wNS0xNS9hMGYzNTY4ZmY0YWJjM2QzZTAzYjkxNjdmNjVhYWNmNS5pY28ucG5n46IPpAAAAABJRU5ErkJggg=="
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/assets/favicon-96x96-14498dfb.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX4+vz4+v33+vnz+PH5+v35+v/f8MvO6an5+v75+//w9+zr9eL4+vvD5ZPd78ft9ufv9un5+/7z+PLX7bq54X7Z7r7q9eG84oXz+PPe8Mi44X7T67Py9+/2+fi+44qr22Lk8tPR6q7n89qv3Wu54X/0+fXm89jD5ZK84obo9Nz6+//n89m+44jB5I/j8tP3+vv3+vrh8c7g8MzB5I7i8dDe8Mn2+fnP6qzd78by+PD3+fn///+lKhiMAAAAAWJLR0Q7OQ70bAAAAAlwSFlzAAASdAAAEnQB3mYfeAAAAAd0SU1FB+YFDwoWCIOedSoAAAB0SURBVBjTY2AgHjCi8ZmYkSVZGFjZ2DlYYFxOLm4GHl4+fgFBiDYhYRFRTjFxCUkpaRkQX1ZOXoGFU5Gdk0VJWUUVqIZHTV1cQVVDU0tbR1dPH6SEw8DQ0MjYgMXE1IwDaiyHoLkFJwMLB5LFllYEnEkSAAACMAfuTgKqBQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0wNS0xNVQxMDoyMjowMSswMDowMIZYt6MAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjItMDUtMTVUMTA6MjI6MDErMDA6MDD3BQ8fAAAAIHRFWHRzb2Z0d2FyZQBodHRwczovL2ltYWdlbWFnaWNrLm9yZ7zPHZ0AAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6SGVpZ2h0ADE5MkBdcVUAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgAMTky06whCAAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNjUyNjEwMTIxcrqSoAAAAA90RVh0VGh1bWI6OlNpemUAMEJClKI+7AAAAFZ0RVh0VGh1bWI6OlVSSQBmaWxlOi8vL21udGxvZy9mYXZpY29ucy8yMDIyLTA1LTE1L2EwZjM1NjhmZjRhYmMzZDNlMDNiOTE2N2Y2NWFhY2Y1Lmljby5wbmfjog+kAAAAAElFTkSuQmCC"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roberto Payeras | Fullstack Web Developer</title>
+    
+    <script type="module" crossorigin src="/assets/index-8ebbedf6.js"></script>
+    <link rel="stylesheet" href="/assets/index-9bc548c9.css">
+  </head>
+  <body class="max-w-6xl m-auto bg-slate-50 font-lato text-oxford">
+    <header
+      class="flex items-center justify-between w-full p-4 transition-all rounded-md"
+    >
+      <div class="font-bold">
+        <span class="text-lime-500">{</span>Roberto Payeras<span
+          class="text-lime-500"
+          >}</span
+        >
+      </div>
+      <div
+        id="menu__wrapper"
+        class="absolute top-0 left-0 z-10 hidden w-full h-full transition-all md:block md:w-auto md:relative backdrop-blur-sm md:backdrop-blur-none"
+      >
+        <div
+          class="w-10/12 p-4 mt-2 ml-auto mr-2 bg-white rounded-md shadow-sm md:w-full md:p-0 md:flex md:flex-row md:justify-end md:align-middle md:gap-8 md:bg-transparent md:shadow-none"
+        >
+          <nav
+            class="flex flex-col gap-4 mb-16 font-semibold md:flex-row md:mb-0 md:items-center"
+          >
+            <a
+              class="transition-all decoration-wavy hover:text-lime-500 hover:underline hover:underline-offset-2 decoration-lime-500"
+              href="#about"
+              >About</a
+            >
+            <a
+              class="transition-all decoration-wavy hover:text-lime-500 hover:underline hover:underline-offset-2 decoration-lime-500"
+              href="#projects"
+              >Projects</a
+            >
+            <a
+              class="transition-all decoration-wavy hover:text-lime-500 hover:underline hover:underline-offset-2 decoration-lime-500"
+              href="#experience"
+              >Experience</a
+            >
+            <a
+              class="transition-all decoration-wavy hover:text-lime-500 hover:underline hover:underline-offset-2 decoration-lime-500"
+              href="#contact"
+              >Contact</a
+            >
+          </nav>
+          <nav class="flex gap-4 p-2 align-middle">
+            <a
+              class="transition-opacity cursor hover:opacity-60"
+              href="https://github.com/rpayeras"
+              target="_blank"
+            >
+              <img
+                class="w-6"
+                src="/assets/github-5b908635.svg"
+                alt="Github Page"
+              />
+            </a>
+            <a
+              class="transition-opacity cursor hover:opacity-60"
+              href="https://www.linkedin.com/in/rpayeras/"
+              target="_blank"
+            >
+              <img
+                class="w-6"
+                src="/assets/linkedin-409e079e.svg"
+                alt="Linkedin"
+              />
+            </a>
+            <a
+              class="transition-opacity cursor hover:opacity-60"
+              href="https://twitter.com/Rpayeras"
+              target="_blank"
+            >
+              <img class="w-6" src="/assets/twitter-746f24d5.svg" alt="Twitter" />
+            </a>
+          </nav>
+          <div
+            id="menu__btn--close"
+            class="absolute px-3 py-1 transition-all bg-white rounded-full shadow-md cursor-pointer md:hidden top-4 right-8 hover:bg-lime-500 hover:text-white"
+          >
+            X
+          </div>
+        </div>
+      </div>
+      <div
+        id="menu__btn--open"
+        class="px-2 py-2 transition-all bg-white rounded-full cursor-pointer md:hidden hover:bg-lime-500 hover:text-white duration-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </div>
+    </header>
+
+    <main class="p-4">
+      <section class="relative mb-12">
+        <div class="">
+          <div
+            class="flex flex-col-reverse items-center gap-8 mb-8 md:gap-0 md:flex-row"
+          >
+            <h1 class="text-6xl font-latosemibold">
+              I'm
+              <span class="text-lime-500">Roberto</span>.<br />
+              Javascript Fullstack Developer.
+            </h1>
+            <img
+              class="m-auto shadow-md rounded-xl w-36 md:w-47"
+              src="/assets/profile-7efdd624.jpg"
+              alt="Image of Roberto Payeras"
+            />
+          </div>
+          <div class="w-full p-4 text-3xl text-center text-lime-500">
+            &lt;/>
+          </div>
+        </div>
+        <div class="absolute top-0 w-full h-full -z-10 blur-3xl">
+          <div
+            class="absolute rounded-full w-60 h-60 bg-lime-200 animate-baila-linear opacity-60"
+          ></div>
+          <div
+            class="absolute right-0 bg-indigo-500 rounded-full w-60 h-60 animate-baila-linear-reverse top-80 opacity-40"
+          ></div>
+        </div>
+      </section>
+
+      <section>
+        <div></div>
+      </section>
+
+      <section class="mb-12" id="about">
+        <h2 class="mb-4 text-3xl font-latosemibold underline-wave">About me</h2>
+        <p>
+          I'm Roberto, I develop backend and frontend web applications to
+          transform society. I am passionate about projects that not only make
+          me grow but are an important turning point in the sector. Cinephile,
+          sporadic sportsman, attentive coworker and crazy searcher.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-4 text-3xl font-latosemibold underline-wave">
+          Technologies
+        </h2>
+        <div>
+          <div class="mb-16">
+            <h3 class="mb-8 text-xl font-semibold text-center">Frontend</h3>
+            <div class="flex justify-center w-full gap-8">
+              <img class="w-12" src="/assets/react-f2cadfd0.svg" alt="React JS" />
+              <img class="w-12" src="/assets/nextjs-9e6ca5de.svg" alt="Next JS" />
+              <img
+                class="w-14"
+                src="/assets/javascript-183716c1.svg"
+                alt="Javascript"
+              />
+              <img
+                class="w-14"
+                src="/assets/typescript-b487cbba.svg"
+                alt="Typescript"
+              />
+            </div>
+          </div>
+          <div class="mb-8">
+            <h3 class="mb-8 text-xl font-semibold text-center">Backend</h3>
+            <div class="flex justify-center w-full gap-4 md:gap-8">
+              <img
+                class="w-20"
+                src="/assets/nodejs-dc8800bf.svg"
+                alt="Node JS icon"
+              />
+              <img
+                class="w-20"
+                src="/assets/laravel-57c1427e.svg"
+                alt="Node JS icon"
+              />
+              <img
+                class="w-20"
+                src="/assets/mysql-ebf7b04b.svg"
+                alt="Mysql icon"
+              />
+              <img
+                class="w-20"
+                src="/assets/mongodb-c9387567.svg"
+                alt="Mongo DB"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="m-auto mb-8 bg-oxford w-60 border-1" />
+
+      <section class="mb-12" id="experience">
+        <h2 class="mb-8 text-3xl font-latosemibold underline-wave">
+          Experience
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <h3 class="text-lg font-bold">Fullstack Web Developer PHP</h3>
+            <h4>Refineria Web - Palma de Mallorca</h4>
+            <p class="mb-4">December 2019 to Enero 2022 - 2 Years 1 month</p>
+            <ul class="pl-4 list-disc">
+              <li>
+                I developed multiple websites using Laravel as the main
+                framework, all with their own CMS developed myself or with a
+                complement like October CMS.
+              </li>
+              <li>
+                I gained an understanding of versioning control, modern
+                responsive designs with BEM, and building apps with webpack.
+              </li>
+              <li>I learned about SEO good practices.</li>
+              <li>
+                I learned how to manage multiple clients with assertive
+                attention.
+              </li>
+              <li>
+                I made complex SQL queries to extract useful business
+                information to create pdf reports.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">PHP Developer</h3>
+            <h4>Grupotel Hotels & Resorts - Palma de Mallorca</h4>
+            <p class="mb-4">July 2015 to December 2019 - 4 years 6 months</p>
+            <ul class="pl-4 list-disc">
+              <li>
+                I developed and maintained his main website, CMS, reservation
+                system, channel manager with integrations in XML and REST
+                services with PHP.
+              </li>
+              <li>
+                I developed an app with angular js, which was shared between
+                hotels to give to clients useful information about the
+                establishment and environment about them.
+              </li>
+              <li>
+                I made an Ionic app for Android and Ios for all workers to
+                centralize incidences in each establishment.
+              </li>
+              <li>
+                I created an intranet made with React JS for all employees for
+                all hotels.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Frontend Developer</h3>
+            <h4>At4.net Internet and Comunications - Palma de Mallorca</h4>
+            <p class="mb-4">March 2015 to June 2015 - 5 months</p>
+            <ul class="pl-4 list-disc">
+              <li>
+                Intern period where i discovered some standards like MVC with
+                Microfrontends patterns in Java.
+              </li>
+              <li>
+                I maked responsive designs with business standards of CSS.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <hr class="m-auto mb-8 bg-oxford w-60 border-1" />
+
+      <section class="mb-12" id="projects">
+        <h2 class="mb-4 text-3xl font-bold underline-wave">Projects</h2>
+        <h3 class="mb-8">Some of projects which i have been worked</h3>
+
+        <div class="grid grid-cols-2 gap-4 mb-16 md:gap-8">
+          <a
+            href="https://www.visualight-it.com"
+            rel="nofollow"
+            class="relative shadow-md group"
+            target="_blank"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/visualight-89a55890.jpg"
+                      loading="lazy"
+                      alt="Visualight image 1"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/visualight2-17899201.jpg"
+                      loading="lazy"
+                      alt="Visualight image 2"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">Visualight</h4>
+              <div class="flex gap-3">
+                <img
+                  class="w-6"
+                  src="/assets/laravel-57c1427e.svg"
+                  alt="react icon"
+                />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.luxsystems.com"
+            target="_blank"
+            rel="nofollow"
+            class="relative shadow-md group"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/luxsystems-7b94a099.jpg"
+                      loading="lazy"
+                      alt="luxsystems image 1"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/luxsystems2-2c09f207.jpg"
+                      loading="lazy"
+                      alt="luxsystems image 2"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">Luxsystems</h4>
+              <div class="flex gap-3">
+                <img
+                  class="w-6"
+                  src="/assets/laravel-57c1427e.svg"
+                  loading="lazy"
+                  alt="react icon"
+                />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://trackyourmed.com/"
+            target="_blank"
+            rel="nofollow"
+            class="relative shadow-md group"
+          >
+            <img
+              class="w-full"
+              src="/assets/trackyourmed-c9bf5e82.jpg"
+              loading="lazy"
+              alt="Project1"
+            />
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">Trackyourmed</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/laravel-57c1427e.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://web.archive.org/web/20211009112338/http://safetourism.illesbalears.travel/"
+            rel="nofollow"
+            class="relative shadow-md group"
+            target="_blank"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/safetourism-ae262903.jpg"
+                      loading="lazy"
+                      alt="Project1"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/safetourism2-171443f1.jpg"
+                      loading="lazy"
+                      alt="Project1"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">
+                Safetourism Illes Balears
+              </h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/react-f2cadfd0.svg" />
+                <img class="w-6" src="/assets/laravel-57c1427e.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.esprincep.com"
+            target="_blank"
+            rel="nofollow"
+            class="relative shadow-md group"
+          >
+            <img
+              class="w-full"
+              src="/assets/esprincep-9fb876d2.jpg"
+              alt="Project1"
+            />
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">Es Princep Hotel</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/laravel-57c1427e.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.stp-palma.com"
+            target="_blank"
+            rel="nofollow"
+            class="relative shadow-md group"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/stp-9728fad4.jpg"
+                      loading="lazy"
+                      alt="Project1"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/stp2-b0538859.jpg"
+                      loading="lazy"
+                      alt="Project1"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">STP Palma</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/laravel-57c1427e.svg" />
+              </div>
+            </div>
+          </a>
+        </div>
+        <hr class="m-auto mb-8 w-60 border-1" />
+        <h2 class="mb-4 text-3xl font-bold underline-wave">Last Projects</h2>
+        <h3 class="mb-8">Last learnings and improvements.</h3>
+        <div class="grid grid-cols-2 gap-8">
+          <a
+            href="https://next-jira.rpayeras.xyz/"
+            target="_blank"
+            class="relative shadow-md group"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/next-jira-118f3377.jpg"
+                      loading="lazy"
+                      alt="Next jira project"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/next-jira-2-615b287b.jpg"
+                      loading="lazy"
+                      alt="Next jira project 2"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">Next Jira</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/nextjs-9e6ca5de.svg" />
+                <img class="w-6" src="/assets/nodejs-dc8800bf.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://react-calendar.rpayeras.xyz/"
+            target="_blank"
+            class="relative shadow-md group"
+          >
+            <img
+              class="w-full"
+              src="/assets/next-calendar-38ae230e.jpg"
+              loading="lazy"
+              alt="Project1"
+            />
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">React Calendar</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/react-f2cadfd0.svg" />
+                <img class="w-6" src="/assets/nodejs-dc8800bf.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://react-weather.rpayeras.xyz/"
+            target="_blank"
+            class="relative shadow-md group"
+          >
+            <img
+              class="w-full"
+              src="/assets/weather-cf37976e.png"
+              loading="lazy"
+              alt="weather widget"
+            />
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">React Weather</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/react-f2cadfd0.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://next-comics.rpayeras.xyz/"
+            target="_blank"
+            class="relative shadow-md group"
+          >
+            <img
+              class="w-full"
+              src="/assets/next-comics-906a0ab3.jpg"
+              loading="lazy"
+              alt="next comics"
+            />
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">Next Comics</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/nextjs-9e6ca5de.svg" />
+                <img class="w-6" src="/assets/nodejs-dc8800bf.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://next-pokemon.rpayeras.xyz/"
+            target="_blank"
+            class="relative shadow-md group"
+          >
+            <div class="splide" aria-label="">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/next-pokemon-966f158f.jpg"
+                      loading="lazy"
+                      alt="Next pokemon project"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="w-full"
+                      src="/assets/next-pokemon-2-37442c4b.jpg"
+                      loading="lazy"
+                      alt="Next pokemon project 2"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">Next Pokemon</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/nextjs-9e6ca5de.svg" />
+                <img class="w-6" src="/assets/nodejs-dc8800bf.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://react-heroes.rpayeras.xyz/"
+            target="_blank"
+            class="relative shadow-md group"
+          >
+            <img
+              class="w-full"
+              src="/assets/react-heroes-5edb36c2.jpg"
+              loading="lazy"
+              alt="React heroes image"
+            />
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">React heroes</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/react-f2cadfd0.svg" />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://react-gif.rpayeras.xyz/"
+            target="_blank"
+            class="relative shadow-md group"
+          >
+            <img
+              class="w-full"
+              src="/assets/react-gif-31694d8f.jpg"
+              loading="lazy"
+              alt="Project1"
+            />
+            <div
+              class="absolute bottom-0 items-end w-full py-1 pl-2 transition-all bg-white rounded-sm bg-opacity-60 group-hover:bg-opacity-80 cursor"
+            >
+              <h4 class="mb-2 font-semibold text-md">React Gif</h4>
+              <div class="flex gap-3">
+                <img class="w-6" src="/assets/react-f2cadfd0.svg" />
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section class="mb-12" id="contact">
+        <h2 class="mb-4 text-4xl font-latosemibold underline-wave">Contact</h2>
+        <p class="mb-12">
+          If you want to talk to me you can do so in any of the following ways.
+        </p>
+        <div class="flex justify-center gap-4">
+          <a
+            class="transition-opacity cursor hover:opacity-60"
+            href="https://github.com/rpayeras"
+            target="_blank"
+          >
+            <img
+              class="w-8"
+              src="/assets/github-5b908635.svg"
+              alt="Github Page"
+            />
+          </a>
+          <a
+            class="transition-opacity cursor hover:opacity-60"
+            href="https://www.linkedin.com/in/rpayeras/"
+            target="_blank"
+          >
+            <img
+              class="w-8"
+              src="/assets/linkedin-409e079e.svg"
+              alt="Linkedin Page"
+            />
+          </a>
+          <a
+            class="transition-opacity cursor hover:opacity-60"
+            href="https://twitter.com/Rpayeras"
+            target="_blank"
+          >
+            <img
+              class="w-8"
+              src="/assets/twitter-746f24d5.svg"
+              alt="Twitter Page"
+            />
+          </a>
+        </div>
+      </section>
+    </main>
+    <hr class="w-full h-1" />
+    <footer class="p-2">
+      Forged with &#10084;&#65039; by
+      <span class="font-bold"
+        ><span class="text-lime-500">{</span>Roberto Payeras<span
+          class="text-lime-500"
+          >}</span
+        ></span
+      >
+    </footer>
+  </body>
+</html>
